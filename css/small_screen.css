@@ -1,0 +1,25 @@
+@media (min-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    .special-heading {
+        margin-bottom: 60px;
+    }
+    .section-services .container main {
+        align-items: center;
+        justify-content: space-between;
+    }
+    .section-services .container main article {
+        width: 45%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .section-services .container main article .content
+    {
+        text-align: left;
+    }
+    .section-about .container main {
+        flex-basis: calc(100% - 400px);
+    }
+}

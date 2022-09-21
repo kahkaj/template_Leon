@@ -1,0 +1,62 @@
+@media (min-width: 992px) {
+    .container {
+        width: 85%;
+    }
+    nav .section-menu {
+        align-items: right;
+    }
+    nav .section-menu ul {
+        right: initial;
+    }
+    nav .section-menu ul li {
+        width: 250px;
+    }
+    nav .section-menu ul li:first-child::before {
+        right: calc(50% - 15px);
+    }
+    main .section-landing {
+        height: 300px;
+    }
+    main .section-landing .container {
+        align-items: center;
+    }
+    main .section-landing .container .article-intro {
+        text-align: center;
+    }
+    main .section-features .container {
+        padding: 0;   
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .section-services .container main {
+        width: 65%;
+    }
+    .section-services .container aside {
+        width: 20%;
+        height: 220px;
+        margin-left: 40px;
+        position: relative;
+        display: block;
+        align-self: center;
+    }
+    .section-services .container aside::after {
+        content: "";
+        background-color: var(--dark-color);
+        width: 60px;
+        height: calc(100% + 60px);
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        z-index: -1;
+    }
+    .section-services .container aside img {
+        width: 100%;
+        height: 100%;
+    }
+    .section-portfolio .container main .article-card {
+        width: 30%;
+    }
+    .section-about .container main {
+        flex-basis: calc(100% - 500px);
+    }
+}

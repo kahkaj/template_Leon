@@ -1,0 +1,39 @@
+@media (max-width: 767px) {
+    .special-heading h2 {
+        font-size: 70px;
+    }
+    .special-heading p {
+        font-size: 14px;
+        margin-top: -20px;
+    }
+    .section-portfolio .container main {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .section-portfolio .container main .article-card {
+        width: 250px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .section-about .container {
+        flex-direction: column;
+    }
+    .section-about .container main {
+        text-align: center;
+    }
+    .section-about .container main hr {
+        align-self: center;
+    }
+    .section-about .container aside {
+        margin-bottom: 40px;
+    }
+    .section-about .container aside::after {
+        display: none;
+    }
+    .section-contact .container .main-info .article-mail p {
+        font-size: 26px;
+    }
+    .section-contact .container .main-info .article-mail a {
+        font-size: 20px;
+    }
+}

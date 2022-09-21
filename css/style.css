@@ -1,0 +1,463 @@
+/*                   ___________
+____________________| variables |_______________________________________________________________ */
+:root {
+    --green-color: #10cab7;
+    --dark-color: #545B6B;
+    --gray-color: #E6E6E6;
+}
+/*                   ______________
+____________________| global rules |____________________________________________________________ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Work Sans', sans-serif;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: center;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+/*                   ____________
+____________________| components |______________________________________________________________ */
+.special-heading {
+    width: 100%;
+    height: 150px;
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.special-heading h2 {
+    color: var(--gray-color, gray);
+    opacity: 0.5;
+    font-size: 100px;
+    font-weight: 900;
+    letter-spacing: -3px
+}
+.special-heading p {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    margin-top: -30px;
+}
+/*                   ______________      
+____________________| Header & nav |____________________________________________________________ */
+.container {
+        width: 95%;
+        margin: 0 auto;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+}
+.container header,
+.container nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 61px;
+}
+.container header {
+    margin-left: 10%;
+}
+.container nav {
+    margin-right: 10%;
+}
+.container header .section-logo,
+.container nav .section-menu {
+    height: 25px;
+}
+.container header .section-logo a img {
+    height: 100%;
+}
+.container nav .section-menu {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+.container nav .section-menu .icon {
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-content: space-between;
+}
+.container nav .section-menu .icon span {
+    height: 3px;
+    background-color: var(--dark-color, #333);
+}
+.container nav .section-menu .icon span:not(:nth-child(2)) {
+    width: 100%;
+}
+.container nav .section-menu .icon span:nth-child(2) {
+    width: 60%;
+    transition: 0.5s;
+}
+.container nav .section-menu:hover .icon span:nth-child(2) {
+    width: 100%;
+}
+.container nav .section-menu ul {
+    display: flex;
+    flex-flow: column wrap;
+    background-color: white;
+    position: absolute;
+    top: calc(((61px - 25px) / 2) + 25px);
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+.container nav .section-menu:hover ul {
+    visibility: visible;
+    opacity: 100%;
+} 
+.container nav .section-menu ul li {
+    width: 200px;
+    border-bottom: 3px solid var(--gray-color, gray);
+    transition: 0.1s;
+}
+.container nav .section-menu ul li:hover {
+    background-color: var(--green-color, green);
+}
+.container nav .section-menu ul li:first-child::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -30px;
+    right: 0;
+    border-style: solid;
+    border-width: 15px;
+    border-color: transparent transparent white transparent;
+    transition: 0.1s;
+}  
+.container nav .section-menu ul li:first-child:hover::before,
+.container nav .section-menu ul li:last-child:hover {
+    border-bottom-color: var(--green-color, green);
+}
+.container nav .section-menu ul li a {
+    display: block;
+    margin: 10px 40px;
+    font-size: 24px; 
+    font-weight: 500;
+    color: var(--green-color, green);
+    overflow: hidden;
+    transition: 0.1s;
+}
+.container nav .section-menu ul li:hover a {
+    color: white;
+}
+/*                   _________________      
+____________________| section-landing |_________________________________________________________ */
+main {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+main .section-landing {
+    width: 100%;
+    height: 300px;
+    background-image: url(../images/mountains.png);
+    background-repeat: no-repeat;
+    background-size: 1263px 500px;
+}
+main .section-landing .container {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 10%;
+}
+main .section-landing .container .article-intro {
+    width: 40%;
+    text-align: left;
+}
+main .section-landing .container .article-intro h3 {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--green-color, green);
+    margin-bottom: 40px;
+}
+main .section-landing .container .article-intro p {
+    letter-spacing: -0.5px;
+    line-height: 1.7;
+}
+/*                   __________________      
+____________________| section-features |________________________________________________________ */
+main .section-features {
+    width: 100%;
+    padding: 32px 0;
+    background-color: #f6f6f6;;
+}
+main .section-features .container {   
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+main .section-features .container .article-feat {
+    width: 250px;
+    height: 200px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+main .section-features .container .article-feat i {
+    font-size: 45px;
+    color: var(--green-color, green);
+}
+main .section-features .container .article-feat h3 {
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: -0.8px;
+}
+main .section-features .container .article-feat p {
+    font-size: 12px;
+    letter-spacing: -1px;
+    line-height: 1.7;
+    color: var(--dark-color, #333);
+}
+/*                   __________________      
+____________________| section-services |________________________________________________________ */
+.section-services {
+}
+.section-services .container {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    height: 548px;
+}
+.section-services .container header {
+}
+.section-services .container main {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+.section-services .container main article {
+    max-width: 450px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.section-services .container aside {
+    display: none;
+}
+.section-services .container main article i {
+    font-size: 40px;
+    color: var(--green-color, green);
+    margin-bottom: 20px;
+}
+.section-services .container main article .content {
+    width: 75%;
+    text-align: center;
+ }
+.section-services .container main article .content h3 {
+    font-size: 14px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+.section-services .container main article .content p {
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: -1px;
+    color: var(--dark-color, #333);
+}
+/*                   ___________________      
+____________________| section-portfolio |_______________________________________________________ */
+.section-portfolio {
+    width: 100%;
+    background-color: #f6f6f6;
+}
+.section-portfolio .container {
+    padding-bottom: 70px;
+    display: flex;
+    flex-flow: column;
+}
+.section-portfolio .container header {
+}
+.section-portfolio .container main {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+.section-portfolio .container main .article-card {
+    width: 300px;
+    margin-bottom: 40px;
+    background-color: white;
+}
+.section-portfolio .container main .article-card img {
+    display: block;
+    width: 100%;
+    height: 232px;
+}
+.section-portfolio .container main .article-card .content {
+    padding: 15px;
+}
+.section-portfolio .container main .article-card .content h3 {
+    font-size: 14px;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+.section-portfolio .container main .article-card .content p {
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: -1px;
+    color: var(--dark-color, #333);
+}
+/*                   _______________      
+____________________| section-about |___________________________________________________________ */
+.section-about {
+    width: 100%;
+}
+.section-about .container {
+    padding-bottom: 70px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.section-about .container header {
+    order: 1;
+    margin-top: 20px;
+}
+.section-about .container main {
+    order: 3;
+    flex-basis: calc(100% - 350px);
+    align-self: flex-start;
+}
+.section-about .container main p:first-of-type {
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 2;
+    margin-bottom: 30px;
+}
+.section-about .container main hr {
+    width: 50%;
+    align-self: flex-start;
+    margin-bottom: 10px;
+    border: 1px solid var(--green-color, green);
+}
+.section-about .container main p:last-of-type {
+    font-size: 12px;
+    line-height: 1.7;
+    letter-spacing: -1px;
+    color: var(--dark-color), #333;
+}
+.section-about .container aside {
+    order: 2;
+    width: 250px;
+    height: 250px;
+    position: relative;
+}
+.section-about .container aside::before {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: calc(100% + 40px);
+    background-color: #f6f6f6;
+    top: -20px;
+    left: -20px;
+    z-index: -1;
+}
+.section-about .container aside::after {
+    content: "";
+    position: absolute;
+    height: 180px;
+    width: 60px;
+    border-left: 60px solid var(--green-color, green);
+    border-bottom: 50px solid var(--green-color, green);
+    top: -20px;
+    right: -82px;
+    z-index: -1;
+}
+.section-about .container aside img {
+    width: 100%;
+    height: 100%;
+}
+/*                   _________________      
+____________________| section-contact |_________________________________________________________ */
+.section-contact {
+    width: 100%;
+    background-color: #f6f6f6;
+}
+.section-contact .container {
+    padding-bottom: 70px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.section-contact .container header {
+}
+.section-contact .container .main-info .article-mail {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.section-contact .container .main-info .article-mail p {
+    color: var(--dark-color, #333);
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+.section-contact .container .main-info .article-mail a {
+    color: var(--green-color, green);
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+.section-contact .container .main-info .article-social {
+    display: flex;
+}
+.section-contact .container .main-info .article-social p {
+    font-size: 12px;
+    line-height: 1.7;
+    letter-spacing: -1px;
+    color: var(--dark-color, #333);
+}
+.section-contact .container .main-info .article-social ul {
+    display: flex;
+}
+.section-contact .container .main-info .article-social ul li a {
+    margin-left: 20px;
+    color: var(--dark-color, #333);
+}
+/*                   ________      
+____________________| Footer |__________________________________________________________________ */
+body footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+    background-color: #2B3C47;
+    height: 65px;
+}
+body footer p {
+    font-size: 12px;
+    font-weight: 600;
+}
+body footer p span {
+    color: var(--green-color, green);
+}
